@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "536188067598",
+    "firebase_url": "https://logindemosanty.firebaseio.com",
+    "project_id": "logindemosanty",
+    "storage_bucket": "logindemosanty.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536188067598:android:7eab72d7656ee80d",
+        "android_client_info": {
+          "package_name": "com.example.sougata.famart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536188067598-a2ipc46orek0chb6d93veed5opr0m243.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWsX-rgV9H5ePb9WuuFx91jRGAIamJoZY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Fa\'M\'art</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="login_btn">Login</string>
+    <string name="no_of_incorrect_attempts">Number of incorrect attempts : </string>
+    <string name="new_user_register">New User -Register</string>
+</resources>
