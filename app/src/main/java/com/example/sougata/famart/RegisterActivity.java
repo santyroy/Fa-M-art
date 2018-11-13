@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -51,14 +52,20 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             task.getResult();
                             if (task.isSuccessful()) {
-                                Toast.makeText(RegisterActivity.this, "Registration successfull", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(RegisterActivity.this, SignInActivity.class));
+                                //Toast.makeText(RegisterActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
+                                //startActivity(new Intent(RegisterActivity.this, SignInActivity.class));
+
+                                //Send verify email to the user
+                                sendEmailVerification();
+
                             } else {
                                 Toast.makeText(RegisterActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
                 }
+
+
             }
         });
 
@@ -105,5 +112,24 @@ public class RegisterActivity extends AppCompatActivity {
             return false;
         }
         return true;
+    }
+
+    private void sendEmailVerification() {
+        //Trying to get the new instance of firebaseAuth object as the user is not yet created
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+        if (firebaseUser != null) {
+            firebaseUser.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(RegisterActivity.this, "Registration Successful. Verification email sent.", Toast.LENGTH_LONG).show();
+                        firebaseAuth.signOut();
+                        startActivity(new Intent(RegisterActivity.this, SignInActivity.class));
+                    } else {
+                        Toast.makeText(RegisterActivity.this, "Failed to sent verification email", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
     }
 }

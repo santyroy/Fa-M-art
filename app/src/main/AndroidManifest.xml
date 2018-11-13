@@ -21,7 +21,9 @@
         <activity
             android:name=".WelcomeActivity"
             android:noHistory="true" />
-        <activity android:name=".RegisterActivity"></activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:noHistory="true" />
     </application>
 
 </manifest>

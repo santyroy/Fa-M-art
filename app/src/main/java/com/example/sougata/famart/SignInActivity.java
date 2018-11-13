@@ -103,8 +103,13 @@ public class SignInActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         progressDialog.dismiss();
-                        Toast.makeText(SignInActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(SignInActivity.this, WelcomeActivity.class));
+
+                        //Toast.makeText(SignInActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                        //startActivity(new Intent(SignInActivity.this, WelcomeActivity.class));
+
+                        //Implement check for email verification
+                        emailVerificationCheck();
+
                     } else {
                         progressDialog.dismiss();
                         Toast.makeText(SignInActivity.this, "Login failed", Toast.LENGTH_SHORT).show();
@@ -136,5 +141,18 @@ public class SignInActivity extends AppCompatActivity {
             return false;
         }
         return true;
+    }
+
+    private void emailVerificationCheck() {
+        //FirebaseAuth.getInstance() is used to get the existing user's instance
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        Boolean emailFlag = firebaseUser.isEmailVerified();
+        if (emailFlag) {
+            finish();
+            startActivity(new Intent(SignInActivity.this, WelcomeActivity.class));
+        } else {
+            Toast.makeText(SignInActivity.this, "Please verify your email", Toast.LENGTH_SHORT).show();
+            firebaseAuth.signOut();
+        }
     }
 }
