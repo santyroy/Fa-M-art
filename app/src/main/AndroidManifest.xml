@@ -24,6 +24,7 @@
         <activity
             android:name=".RegisterActivity"
             android:noHistory="true" />
+        <activity android:name=".ForgotPasswordActivity"></activity>
     </application>
 
 </manifest>

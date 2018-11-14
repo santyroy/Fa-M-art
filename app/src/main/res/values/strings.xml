@@ -9,4 +9,7 @@
     <string name="welcome_to_fa_m_art">Welcome To Fa\'M\'art</string>
     <string name="settings">Settings</string>
     <string name="refresh">Refresh</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="reset_passowrd_email">Email</string>
+    <string name="reset_password_btn">Reset Password</string>
 </resources>

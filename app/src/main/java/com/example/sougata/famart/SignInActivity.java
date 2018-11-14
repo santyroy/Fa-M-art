@@ -26,6 +26,7 @@ public class SignInActivity extends AppCompatActivity {
     private EditText password;
     private TextView attempts;
     private TextView register;
+    private TextView forgotpassword;
     private Button login;
     private ProgressDialog progressDialog;
     private int countAttempts = 5;
@@ -46,6 +47,7 @@ public class SignInActivity extends AppCompatActivity {
         attempts = findViewById(R.id.attempts_tv);
         login = findViewById(R.id.login_btn);
         register = findViewById(R.id.register_tv);
+        forgotpassword = findViewById(R.id.forgot_password_tv);
         attemptString = SignInActivity.this.getString(R.string.no_of_incorrect_attempts);
         attempts.setText(String.format(Locale.getDefault(), "%s%d", attemptString, countAttempts));
 
@@ -81,6 +83,14 @@ public class SignInActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(SignInActivity.this, RegisterActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        forgotpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(SignInActivity.this, ForgotPasswordActivity.class));
             }
         });
     }
