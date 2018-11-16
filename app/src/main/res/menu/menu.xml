@@ -19,4 +19,10 @@
         android:orderInCategory="300"
         android:title="@string/refresh"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/profile_menu"
+        android:orderInCategory="300"
+        android:title="@string/profile"
+        app:showAsAction="never" />
 </menu>

@@ -19,12 +19,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".WelcomeActivity"
-            android:noHistory="true" />
+            android:name=".WelcomeActivity" />
         <activity
             android:name=".RegisterActivity"
             android:noHistory="true" />
-        <activity android:name=".ForgotPasswordActivity"></activity>
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".ProfileActivity"></activity>
     </application>
 
 </manifest>

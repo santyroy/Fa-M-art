@@ -55,8 +55,8 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (validate()) {
                     //Upload data to database
-                    String user_email = email.getText().toString().trim();
-                    String user_password = password.getText().toString().trim();
+                    String user_email = uemail;
+                    String user_password = upass;
                     firebaseAuth.createUserWithEmailAndPassword(user_email, user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -132,7 +132,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void sendEmailVerification() {
-        //Trying to get the new instance of firebaseAuth object as the user is not yet created
+        //Trying to get the new instance of FirebaseAuth object as the user is not yet created
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
         if (firebaseUser != null) {
             firebaseUser.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {

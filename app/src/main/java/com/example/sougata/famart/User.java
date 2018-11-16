@@ -6,6 +6,10 @@ class User {
     private String email;
     private String age;
 
+    User() {
+
+    }
+
     User(String name, String email, String age) {
         this.name = name;
         this.email = email;

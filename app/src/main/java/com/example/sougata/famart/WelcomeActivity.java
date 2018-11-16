@@ -59,6 +59,10 @@ public class WelcomeActivity extends AppCompatActivity {
             case R.id.refresh_menu:
                 //TODO: Add refresh option
                 break;
+
+            case R.id.profile_menu:
+                startActivity(new Intent(WelcomeActivity.this, ProfileActivity.class));
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
