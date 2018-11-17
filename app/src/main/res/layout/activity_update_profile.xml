@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".UpdateProfileActivity">
 
     <ImageView
-        android:id="@+id/profile_picture_iv"
+        android:id="@+id/update_profile_picture_iv"
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_marginStart="8dp"
@@ -20,8 +20,8 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/profile_name_tv"
+    <EditText
+        android:id="@+id/update_name_et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -29,57 +29,47 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Name :"
-        android:textSize="14sp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_picture_iv" />
+        app:layout_constraintTop_toBottomOf="@+id/update_profile_picture_iv" />
 
-    <TextView
-        android:id="@+id/profile_age_tv"
+    <EditText
+        android:id="@+id/update_email_et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Age :"
-        android:textSize="14sp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_name_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/update_name_et" />
 
-    <TextView
-        android:id="@+id/profile_email_tv"
+    <EditText
+        android:id="@+id/update_age_et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Email :"
+        android:ems="10"
+        android:hint="Age"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_age_tv" />
-
-    <Button
-        android:id="@+id/profile_edit_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Edit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_email_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/update_email_et" />
 
     <Button
-        android:id="@+id/profile_edit_password_btn"
+        android:id="@+id/update_profile_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -88,9 +78,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Change Password"
+        android:text="Update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_edit_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/update_age_et" />
 </android.support.constraint.ConstraintLayout>

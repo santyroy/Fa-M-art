@@ -18,13 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".WelcomeActivity" />
+        <activity android:name=".WelcomeActivity" />
         <activity
             android:name=".RegisterActivity"
             android:noHistory="true" />
         <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".UpdateProfileActivity" />
+        <activity android:name=".ChangePasswordActivity"></activity>
     </application>
 
 </manifest>
